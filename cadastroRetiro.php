@@ -24,7 +24,7 @@ $sql= "INSERT INTO cadastro (nome, dataNasc, cpf, sexo, estCivil, fone, endereco
          }
          else{
             echo  "<script>alert('CPF Existente! Tente novamente!')</script>";
-           /* header("location: cadastroRetiro2023.html");*/
+          
          }
          
          mysqli_close($conexao);
