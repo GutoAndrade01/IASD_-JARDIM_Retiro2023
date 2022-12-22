@@ -31,28 +31,28 @@
             <p> Realize o seu cadastro, preenxendo o formulário abaixo! <a href="#"></a> </p>
             <form action="cadastroRetiro.php" method="post">
                 <div class="input-group w50">
-                    <label for="nomeCompleto">Nome:</label>
-                    <input  type="text" name="nomeCompleto" placeholder="Digite seu nome Completo" required>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="NomeCompleto" placeholder="Digite seu nome Completo" required>
                 </div>
                 <div class="input-group w51">
-                    <label for="DataNascimento">Data de Nascimento:</label>
-                    <input id="m1" type="date" nome="DataNascimento1" placeholder="dd/mm/aaaa" required>
+                    <label for="Date">Data de Nascimento:</label>
+                    <input type="date" name="DataNascimento" placeholder="dd/mm/aaaa" required>
                 </div>
                 <div class="input-group w51">
-                    <label for="cpf">CPF:</label>
-                    <input id="cpf" type="text" nome="cpf1" placeholder="Digite seu CPF" required>
+                    <label for="CPF">CPF:</label>
+                    <input type="text" name="Cpf" placeholder="Digite seu CPF" required>
                 </div>
                 <div class="input-group w52">
-                    <label for="sexo">Sexo:</label>
-                    <select nome="sexo1">
+                    <label for="Sexo">Sexo:</label>
+                    <select name="sexo">
                         <option selected enable></option>
                         <option value="masculino">Masculino</option>
                         <option value="feminino">Feminino</option>
                     </select>
                 </div>
                     <div class="input-group w52">
-                        <label for="estadoCivil" nome="estcivil">Estado Civil:</label>
-                        <select nome="estadoCivil">
+                        <label for="est_Civil" nome="estcivil">Estado Civil:</label>
+                        <select name="EstadoCivil">
                             <option selected enable></option>
                             <option value="casado">Casado(a)</option>
                             <option value="solteiro">Solteriro(a)</option>
@@ -60,27 +60,27 @@
                     </div>
                 <div class="input-group w50">
                     <label for="fone">Telefone:</label>
-                    <input id="fone" type="tel" nome="fone" placeholder="(00)0000 0000" required>
+                    <input type="tel" name="Fone" placeholder="(00)0000 0000" required>
                 </div>
                 <div class="input-group w50">
-                    <label for="Endereço">Endereço:</label>
-                    <input id="m1" type="text" nome="endereço" placeholder="Digite seu Endereço" required>
+                    <label for="End">Endereço:</label>
+                    <input type="text" name="Endereço" placeholder="Digite seu Endereço" required>
                 </div>
                 <div class="input-group w51">
                     <label for="bairro">Bairro:</label>
-                    <input id="m1" type="text" nome="bairro" placeholder="Digite seu Bairro" required>
+                    <input type="text" name="Bairro" placeholder="Digite seu Bairro" required>
                 </div>
                 <div class="input-group w50">
                     <label for="cidade">Cidade:</label>
-                    <input id="m1" type="text" nome="cidade" placeholder="Digite sua Cidade" required>
+                    <input type="text" name="Cidade" placeholder="Digite sua Cidade" required>
                 </div>
                 <div class="input-group w51">
                     <label for="cep">CEP:</label>
-                    <input id="cep" type="text" nome="cep" placeholder="Digite seu CEP" required>
+                    <input type="text" name="Cep" placeholder="Digite seu CEP" required>
                 </div>
                 <div class="input-group w51">
-                    <label for="Estado">Estado:</label>
-                    <select nome="estado">
+                    <label for="Est">Estado:</label>
+                    <select name="Estado">
                         <option selected enable></option>
                         <option value="estado">Acre</option>
                         <option value="estado">Alagoas</option>
@@ -112,16 +112,16 @@
                     </select>
                 </div>
                 <div class="input-group w51">
-                    <label for="iasd">IASD:</label>
-                    <input id="m1" type="text" name="iasd" placeholder="Digite Sua IASD" required>
+                    <label for="igreja">IASD:</label>
+                    <input type="text" name="Iasd" placeholder="Digite Sua IASD" required>
                 </div>
                 <div class="input-group w51">
                     <label for="regime">Vegetariano(a): sim?</label>
-                    <input id="checkbox" type="checkbox" name="reg-alimentar" >
+                    <input type="checkbox" name="reg-alimentar" >
                 </div>
                 <div class="input-group w51">
                     <label for="cozinha">Cozinha propria: sim?</label>
-                    <input id="checkbox" type="checkbox" name="cozinha-propria" >
+                    <input type="checkbox" name="cozinha-propria" >
                 </div>
                 <div class="input-group w51">
                     <button>Salvar</button>
