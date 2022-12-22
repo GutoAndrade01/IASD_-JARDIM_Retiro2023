@@ -3,7 +3,7 @@
     $port = "3306";
     $usuario = "root";
     $password = "";
-    $dbname = "retiro2023";
+    $dbname = "teste";
 
     $conexao = mysqli_connect($servidor, $usuario, $password, $dbname);
      if(!$conexao){
