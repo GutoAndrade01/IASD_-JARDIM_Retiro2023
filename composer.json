@@ -1,0 +1,17 @@
+{
+    "name": "retiro/agendamento",
+    "description": "tela de agendamento para retiro 2023",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "Retiro\\Agendamento\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Augusto Andrade"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
