@@ -9,17 +9,17 @@
     <script src="js/jquery.mask.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#cpf").mask("000.000.000-00");
+            $("#Cpf").mask("000.000.000-00");
         })
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#fone").mask("(00)00000-0000");
+            $("#Fone").mask("(00)00000-0000");
         })
     </script>
     <script type="text/javascript">
         $(document).ready(function(){
-            $("#cep").mask("00000-000");
+            $("#Cep").mask("00000-000");
         })
     </script>
     <title>Retiro Espiritual 2023 IASD Central de Jardim da Infancia</title>
@@ -29,7 +29,7 @@
         <div class="form-box">
             <h2>Retiro espiritual 2023</h2>
             <p> Realize o seu cadastro, preenxendo o formulário abaixo! <a href="#"></a> </p>
-            <form action="cadastroRetiro.php" method="post">
+            <form action="cadastroRetiro.php" method="POST">
                 <div class="input-group w50">
                     <label for="nome">Nome:</label>
                     <input type="text" name="NomeCompleto" placeholder="Digite seu nome Completo" required>
@@ -40,7 +40,7 @@
                 </div>
                 <div class="input-group w51">
                     <label for="CPF">CPF:</label>
-                    <input type="text" name="Cpf" placeholder="Digite seu CPF" required>
+                    <input id="Cpf"type="text" name="Cpf" placeholder="Digite seu CPF" required>
                 </div>
                 <div class="input-group w52">
                     <label for="Sexo">Sexo:</label>
@@ -51,7 +51,7 @@
                     </select>
                 </div>
                     <div class="input-group w52">
-                        <label for="est_Civil" nome="estcivil">Estado Civil:</label>
+                        <label for="est_Civil">Estado Civil:</label>
                         <select name="EstadoCivil">
                             <option selected enable></option>
                             <option value="casado">Casado(a)</option>
@@ -60,7 +60,7 @@
                     </div>
                 <div class="input-group w50">
                     <label for="fone">Telefone:</label>
-                    <input type="tel" name="Fone" placeholder="(00)0000 0000" required>
+                    <input id="Fone" type="tel" name="Fone" placeholder="(00)0000 0000" required>
                 </div>
                 <div class="input-group w50">
                     <label for="End">Endereço:</label>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="input-group w51">
                     <label for="cep">CEP:</label>
-                    <input type="text" name="Cep" placeholder="Digite seu CEP" required>
+                    <input id="Cep" type="text" name="Cep" placeholder="Digite seu CEP" required>
                 </div>
                 <div class="input-group w51">
                     <label for="Est">Estado:</label>

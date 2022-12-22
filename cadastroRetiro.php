@@ -1,5 +1,5 @@
 <?php
-   include("conexao.php");
+include "conexao.php";
 
 $nome = $_POST['NomeCompleto'];
 $dataNasc = $_POST['DataNascimento'];
@@ -15,8 +15,6 @@ $estado = $_POST['Estado'];
 $iasd = $_POST['Iasd'];
 $regime = $_POST['reg-alimentar'];
 $cozinha = $_POST['cozinha-propria'];
-
-
 
 
 $sql= "INSERT INTO cadastro (nome, dataNasc, cpf, sexo, estCivil, fone, endereco, bairro, cidade, cep, estado, iasd, regime, cozinha) 
