@@ -6,6 +6,8 @@
     font-family: 'Poppins', sans-serif;
 }
 body{
+    width: 100vw;
+    height: 100vh;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,20 +18,22 @@ body{
     min-height: 100vh;
     background-color: #305345;
 }
-.w50{
-    width: 38%;
+.text-box{
+    width: 20rem;
     float:left;
-    padding-right: 40px;
+    padding-right: 3rem;
 }
 .w51{
-    width: 20%;
+    width: 11rem;
     float:left;
-    padding-right: 40px;
+    padding-right: 1rem;
     
 } 
 .w52{
-    width:11%;
-    float:right;
+    width:10rem;
+    float: left;
+    padding-right: -18rem;
+    margin-right: -1rem;
 }  
    
 .box{
@@ -38,12 +42,16 @@ body{
     height: 100%;
     box-sizing: border-box;
 }
+form{
+    width: 100%;
+}
+
 .form-box{
     background-color: rgba(244, 248, 244, 0.911);
     backdrop-filter: blur(65px);
     padding: 30px 30px;
-    width: 100vw;
-    height: 90vh;    
+    width: 100%;
+    height: auto;  
 }
 .form-box h2{
     font-size: 25px;
@@ -68,13 +76,18 @@ form .input-group{
     margin-bottom: 20px;
     margin-top: 15px;
 }
+.form-box .text-box{
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
 form .input-group label{
+    margin-left: 3px;
     color: #0f0f0f;
     font-weight: bold;
     display: block;
     margin-bottom: 1px;
 }
-form .input-group input {
+form .input-group  .text-box input {
     width:100%;
     height: 18px;
     background-color: rgba(250, 241, 241, 0.603);
@@ -117,19 +130,40 @@ form .input-group input.checkbox{
     border-radius: 15px;
     list-style: none;
 }
-@media only screen and (max-widht:600px){
+@media only screen and (max-width:600px){
+    body{
+        width: 483px;
+        height: auto;
+    }
+    .box{
+        width: 100%;
+        height: 100%;
+    }
     .form-box{
+        width: 100%;
+        height: 100%;
+    }
+    .text-box{
         flex-direction: column;
     }
-    .form-box > h2{
-       display: none;   
+    .w50{
+        margin-left: 60px;
+        width: 80%;
+        flex-direction: column;
     }
-    .form-box > p {
-        width: 100%;
-        right: auto;
+    .w51{
+        width: 80%;
+        margin-left: 60px;
+        flex-direction: column;
     }
-    .form .input-group{
-        width: 100%;
-        right: auto;
+    .w52{
+        width: 70%;
+        margin-left: 60px;
+        float: left;
+        flex-direction: column;
+    }
+    form .input-group button{
+        margin-left: 65px;
+    
     }
 }

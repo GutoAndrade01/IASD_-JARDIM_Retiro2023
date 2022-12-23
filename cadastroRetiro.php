@@ -20,10 +20,11 @@ $cozinha = $_POST['cozinha-propria'];
 $sql= "INSERT INTO cadastro (nome, dataNasc, cpf, sexo, estCivil, fone, endereco, bairro, cidade, cep, estado, iasd, regime, cozinha) 
         VALUES ('$nome', '$dataNasc', '$cpf', '$sexo', '$estCivil', '$fone', '$endereco', '$bairro', '$cidade', '$cep', '$estado', '$iasd', '$regime', '$cozinha')";
        if(mysqli_query($conexao, $sql)){
-            echo "Cadastro Realizado com sucesso!";
+            echo "<script>alert('Cadastro concluido com sucesso!!')</script>";
+            header("location:payment.html");
          }
          else{
-            echo  "<script>alert('CPF Existente! Tente novamente!')</script>";
+            echo  "<script>alert('Houve um problema,Tente novamente!')</script>";
           
          }
          

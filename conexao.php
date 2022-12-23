@@ -1,9 +1,9 @@
 <?php
-    $servidor = "us-cdbr-east-06.cleardb.net";
+    $servidor = "localhost";
     $port = "3306";
-    $usuario = "b2f36ade5577ec";
-    $password = "bd4e5172";
-    $dbname = "heroku_7fa5047aa930f7e";
+    $usuario = "root";
+    $password = "";
+    $dbname = "teste";
 
     $conexao = mysqli_connect($servidor, $usuario, $password, $dbname);
      if(!$conexao){
