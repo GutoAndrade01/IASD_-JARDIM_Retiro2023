@@ -13,11 +13,11 @@ body{
     align-items: center;
     justify-content: center;
     padding: 20px;
-    min-height: 100vh;
     background-color: #305345;
+    margin-top: 100px;
 }
 form{
-    height: 90%;
+    height: 80%;
 }
 .w50{
     width: 30%;
@@ -117,7 +117,7 @@ form .input-group button{
     margin-left: 310px; 
     margin-top: 200px;
 }
-form .input-group input.checkbox{
+form .input-group input .checkbox{
     width: 28px;
     height: 18px;
     content: '';
