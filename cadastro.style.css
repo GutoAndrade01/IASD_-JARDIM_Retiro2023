@@ -130,10 +130,12 @@ form .input-group input .checkbox{
     list-style: none;  
 }
 
-@media only screen and (max-width:1500px){
+@media only screen and (max-width:1400px){
     body{
-        width: 1500px;
-        height: auto;
+        width: 1350px;
+        height: auto;;
+        margin-top: 50px;
+        margin-left: 8px;
     }
     .box{
         width: 100%;
@@ -144,22 +146,26 @@ form .input-group input .checkbox{
         height: 100%;
     }
     .w50{
-        
         width: 270px;
     }
     .w51{
-        width: 200px; 
+        width: 185px; 
     }
     .w52{
-        width: 200px;  
+        width: 190px;  
     }
     .w53{
-        width: 180px; 
+        width: 130px; 
+        margin-right: 100px;
+    }
+    .w54{
+        float: right;
+        width: 180px;
     }
     form .input-group button{
-        margin-left: 800px;
         width: 15%;
         margin-top: 50px;
+        margin-left: 580px;
     }
 }
 @media only screen and (max-width:500px){
@@ -167,7 +173,7 @@ form .input-group input .checkbox{
         margin-top: 5px;
         width: 450px;
         height: auto;
-        margin-left: 15px;
+        margin-left: 10px;
     }
     .box{
         width: 100%;
