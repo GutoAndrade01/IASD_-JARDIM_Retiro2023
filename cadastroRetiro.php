@@ -21,11 +21,11 @@ $sql= "INSERT INTO cadastro (nome, dataNasc, cpf, sexo, estCivil, fone, endereco
         VALUES ('$nome', '$dataNasc', '$cpf', '$sexo', '$estCivil', '$fone', '$endereco', '$bairro', '$cidade', '$cep', '$estado', '$iasd', '$regime', '$cozinha')";
        if(mysqli_query($conexao, $sql)){
             echo "<script>alert('Cadastro concluido com sucesso!!')</script>";
-            header("location:payment.html");
+            header('location: index.html');
          }
          else{
             echo  "<script>alert('Houve um problema,Tente novamente!')</script>";
-          
+            header ("<form action='index.html'>");
          }
          
          mysqli_close($conexao);
