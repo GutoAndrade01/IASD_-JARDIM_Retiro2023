@@ -1,16 +1,62 @@
+
+
 <!DOCTYPE html>
   <link rel="stylesheet" href="controle.style.css">
+  <link href="controle.js">
+   <div class="btn">
+      <button onclick="window.print()">Imprimir Resultados</button>
+   </div>
+   <script>
+        /*function printTable() {
+        window.print();
+        }*/
+        function printTable() {
+    var printContents = document.getElementById("table").innerHTML;
+    var originalContents = document.body.innerHTML;
+
+    document.body.innerHTML = printContents;
+
+    window.print();
+
+    document.body.innerHTML = originalContents;
+}
+  </script>
+ <style> 
+ @media print {
+  button {
+    display: none;
+  }
+}</style>
+    
 <!DOCTYPE html>
 
 
 
 <?php
 include "conexao.php";
+require_once('fpdf.php');
+
+#$pdf = new FPDF();
+#$pdf->AddPage('controle.php');
+#$pdf->SetFont('Arial', 'B', 16);
+#$pdf->Cell(0, 10, 'lista de Inscritos', 0, 1, 'C');
+#$pdf->SetFont('Arial', '', 12);
+#$pdf->Cell(0, 10, '$result', 0, 1);
+#$pdf->Output();
+
+
+
+
 
   $sql = "SELECT * FROM heroku_7fa5047aa930f7e.cadastro ORDER BY id DESC";
   $result= $conexao->query($sql);
+  $num_rows = mysqli_num_rows($result);
 if ($result->num_rows > 0) {
   echo "<table>";
+      echo "<tr>
+             <th>Total de Registros: $num_rows</th>
+           </tr>";
+                  
       echo "<tr>
               <th>Nome</th>
               <th>Data de Nascimento</th>
@@ -27,22 +73,23 @@ if ($result->num_rows > 0) {
             </tr>
           </thead>";
           while($row = $result->fetch_assoc()) {
-            echo "<tr>
-                  <td>" . $row["nome"]. "</td>
-                  <td>" . $row["dataNasc"]. "</td>
-                  <td>" . $row["cpf"]. "</td>
-                  <td>" . $row["sexo"]. "</td>
-                  <td>" . $row["estCivil"]. "</td>
-                  <td>" . $row["fone"]. "</td>
-                  <td>" . $row["cidade"]. "</td>
-                  <td>" . $row["cep"]. "</td>
-                  <td>" . $row["estado"]. "</td>
-                  <td>" . $row["iasd"]. "</td>
-                  <td>" . $row["regime"]. "</td>
-                  <td>" . $row["cozinha"]. "</td>
-                </tr>";
-                }
-  echo "</table>";
+            echo "<tr>";
+                  echo "<td>" . (isset($row["nome"]) ? $row["nome"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["dataNasc"]) ? $row["dataNasc"]: "-") . "</td>";
+                  #echo "<td>" . (isset($row["cpf"]) ? $row["cpf"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["sexo"]) ? $row["sexo"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["estCivil"]) ? $row["estCivil"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["fone"]) ? $row["fone"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["cidade"]) ? $row["cidade"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["cep"]) ? $row["cep"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["estado"])? $row["estado"]: "-") . "</td>";
+                  echo "<td>" . (isset($row["iasd"]) ? $row["iasd"]: "-") . "</td>";
+                  echo "<td>" . (isset($row['regime']) ? $row['regime']: "não") . "</td>";
+                  echo "<td>" . (isset($row['cozinha']) ? $row['cozinha']: "não") . "</td>";
+          echo"</tr>";
+          }      
+          echo "</table>";
+  #echo "Total de Registros: $num_rows";
 } else {
   echo "Não foram encontrados resultados";
 }
