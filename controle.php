@@ -69,7 +69,7 @@ if ($result->num_rows > 0) {
               <th>IASD</th>
               <th>Vegetariano?</th>
               <th>Cozinha Propria?</th>
-              <th>#</th>
+              <th>Status</th>
             </tr>
           </thead>";
           while($row = $result->fetch_assoc()) {
@@ -86,6 +86,7 @@ if ($result->num_rows > 0) {
                   echo "<td>" . (isset($row["iasd"]) ? $row["iasd"]: "-") . "</td>";
                   echo "<td>" . (isset($row['regime']) ? $row['regime']: "não") . "</td>";
                   echo "<td>" . (isset($row['cozinha']) ? $row['cozinha']: "não") . "</td>";
+                  echo "<td>" . (isset($row['status']) ? $row['status']: "-") . "</td>";
           echo"</tr>";
           }      
           echo "</table>";
