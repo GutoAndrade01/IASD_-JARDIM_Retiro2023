@@ -5,9 +5,11 @@
   <link href="controle.js">
    <div class="btn">
       <button onclick="window.print()">Imprimir Resultados</button>
+      <!--<button id="update-button">Update</button> -->
+    
    </div>
    <script>
-        /*function printTable() {
+      /*function printTable() {
         window.print();
         }*/
         function printTable() {
@@ -20,6 +22,12 @@
 
     document.body.innerHTML = originalContents;
 }
+const fileInput = document.getElementById("file-input");
+const customBtn = document.getElementsByClassName("custom-file-upload")[0];
+customBtn.addEventListener("click", function() {
+  fileInput.click();
+});
+
   </script>
  <style> 
  @media print {
@@ -46,18 +54,22 @@ require_once('fpdf.php');
 
 
 
+echo "<div>
+        <input type='submit' value='Update' name='update'>
+      </div>";
 
-
-  $sql = "SELECT * FROM heroku_7fa5047aa930f7e.cadastro ORDER BY id DESC";
-  $result= $conexao->query($sql);
-  $num_rows = mysqli_num_rows($result);
-if ($result->num_rows > 0) {
+  $sql = "SELECT * FROM heroku_7fa5047aa930f7e.cadastro ORDER BY nome ASC";
+  $result1= $conexao->query($sql);
+  $num_rows = mysqli_num_rows($result1);
+if ($result1->num_rows > 0) {
   echo "<table>";
       echo "<tr>
              <th>Total de Registros: $num_rows</th>
            </tr>";
                   
       echo "<tr>
+              <th>Selecionar</th>
+              <th>ID</th>
               <th>Nome</th>
               <th>Data de Nascimento</th>
               <th>Sexo</th>
@@ -70,10 +82,13 @@ if ($result->num_rows > 0) {
               <th>Vegetariano?</th>
               <th>Cozinha Propria?</th>
               <th>Status</th>
+              <th>Anexos</th>
             </tr>
           </thead>";
-          while($row = $result->fetch_assoc()) {
+          while($row = $result1->fetch_assoc()) {
             echo "<tr>";
+                  echo '<td><input type="checkbox"  name="selected[]" value="' . $row['id'] . '"></td>';
+                  echo "<td>" . (isset($row["id"]) ? $row["id"]: "-") . "</td>";
                   echo "<td>" . (isset($row["nome"]) ? $row["nome"]: "-") . "</td>";
                   echo "<td>" . (isset($row["dataNasc"]) ? $row["dataNasc"]: "-") . "</td>";
                   #echo "<td>" . (isset($row["cpf"]) ? $row["cpf"]: "-") . "</td>";
@@ -87,68 +102,17 @@ if ($result->num_rows > 0) {
                   echo "<td>" . (isset($row['regime']) ? $row['regime']: "não") . "</td>";
                   echo "<td>" . (isset($row['cozinha']) ? $row['cozinha']: "não") . "</td>";
                   echo "<td>" . (isset($row['status']) ? $row['status']: "-") . "</td>";
+                  echo "<td>
+                        <input type='file' name='attachment'>
+                        <button class='custom-file-upload'>Upload File</button>
+                        </td>";
           echo"</tr>";
           }      
           echo "</table>";
   #echo "Total de Registros: $num_rows";
-} else {
-  echo "Não foram encontrados resultados";
-}
+          } else {
+            echo "Não foram encontrados resultados";
+          }
 
-
-
-
-
-  
-
-/*?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tabela de Controle</title>
-</head>
-<body>
-         <div>
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Data de Nascimento</th>
-                    <th scope="col">Sexo</th>
-                    <th scope="col">Estado Civil</th>
-                    <th scope="col">Telefone</th>
-                    <th scope="col">Cidade</th>
-                    <th scope="col">CEP</th>
-                    <th scope="col">Estado</th>
-                    <th scope="col">IASD</th>
-                    <th scope="col">Vegetariano?</th>
-                    <th scope="col">Cozinha Propria?</th>
-                    <th scope="col">#</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <?php
-                      while($cad_data.mysqli_fetch_assoc($result)){
-                      echo "<tr>";
-                      echo "<td>" . $cad_data['nome'] . "</td>";
-                      echo "<td>" . $cad_data['dadaNac'] . "</td>";
-                      echo "<td>" . $cad_data['sexo'] . "</td>";
-                      echo "<td>" . $cad_data['estCivil'] . "</td>";
-                      echo "<td>" . $cad_data['fone'] . "</td>";
-                      echo "<td>" . $cad_data['cidade'] . "</td>";
-                      echo "<td>" . $cad_data['cep'] . "</td>";
-                      echo "<td>" . $cad_data['estado'] . "</td>";
-                      echo "<td>" . $cad_data['iasd'] . "</td>";
-                      echo "<td>" . $cad_data['regime'] . "</td>";
-                      echo "<td>" . $cad_data['cozinha'] . "</td>";
-                      echo "</tr>";
-                      }
-                    ?>
-                </tbody>
-              </table>
-        </div>
-</body>
-</html>*/
+          
+?>
